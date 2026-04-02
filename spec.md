@@ -48,11 +48,11 @@ Die Spieler bauen Bohnen an, handeln Karten und ernten diese, um Münzen zu erha
 ### Ablauf eines Spielzugs
 
 1. Die erste Handkarte muss gepflanzt werden
+2. Falls der Spieler keinen Platz mehr hat, muss er ein Feld abernten oder ein zusätzliches Feld kaufen
 2. Optional kann eine zweite Karte gepflanzt werden
 3. Es werden zwei Karten vom Nachziehstapel aufgedeckt und zum Handeln angeboten
 4. Wenn kein anderer Spieler die Karten nimmt, muss der aktive Spieler sie selbst aufnehmen
-5. Falls der Spieler keinen Platz mehr hat, muss er ein Feld abernten oder ein zusätzliches Feld kaufen
-6. Danach ist der nächste Spieler an der Reihe
+5. Danach ist der nächste Spieler an der Reihe
 
 ---
 
