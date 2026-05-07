@@ -33,4 +33,14 @@ public class BeanField {
     public BeanType getType() {
         return type;
     }
+
+    @Override
+    public String toString() {
+
+        if (type == null) {
+            return "leer";
+        }
+
+        return type.getName() + " (" + cards.size() + ")";
+    }
 }
