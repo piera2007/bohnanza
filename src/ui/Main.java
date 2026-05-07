@@ -1,5 +1,6 @@
 package ui;
 
+import logic.GameLoop;
 import model.*;
 
 import java.util.*;
@@ -8,22 +9,18 @@ public class Main {
 
     public static void main(String[] args) {
 
-        BeanType bean = new BeanType("Blaue Bohne", Map.of(1,1, 2,2, 3,3));
+        BeanType blue = new BeanType("Blau", Map.of(1,1, 2,2, 3,3));
+        BeanType red = new BeanType("Rot", Map.of(1,1, 2,2, 3,3));
 
-        Card c1 = new Card(bean);
-        Card c2 = new Card(bean);
+        List<Card> cards = new ArrayList<>();
 
-        Player player = new Player();
+        for (int i = 0; i < 30; i++) {
+            cards.add(new Card(blue));
+            cards.add(new Card(red));
+        }
 
-        player.addCard(c1);
-        player.addCard(c2);
+        GameState state = new GameState(players, drawPile, discardPile);
 
-        System.out.println("Handkarten: " + player.getHand());
-
-        BeanField field = player.getFields().get(0);
-
-        field.plant(player.removeFirstCard());
-
-        System.out.println("Feld Größe: " + field.size());
+        GameLoop.run(state);
     }
 }
