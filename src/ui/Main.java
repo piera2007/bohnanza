@@ -19,8 +19,21 @@ public class Main {
             cards.add(new Card(red));
         }
 
-        GameState state = new GameState(players, drawPile, discardPile);
+        Deck drawPile = new Deck(cards);
+        Deck discardPile = new Deck(new ArrayList<>());
 
+        Player p1 = new Player();
+        Player p2 = new Player();
+
+        List<Player> players = List.of(p1, p2);
+
+        for (Player p : players) {
+            for (int i = 0; i < 5; i++) {
+                p.addCard(drawPile.draw());
+            }
+        }
+
+        GameState state = new GameState(players, drawPile, discardPile);
         GameLoop.run(state);
     }
 }

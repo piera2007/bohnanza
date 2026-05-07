@@ -48,6 +48,20 @@ public class GameLoop {
                 }
             }
 
+            // Phase 1
+            if (!player.getHand().isEmpty()) {
+                System.out.println("Pflicht: erste Karte wird gepflanzt");
+                GameLogic.plantFirstCard(player, state);
+            }
+
+            // Phase 2
+            if (!player.getHand().isEmpty()) {
+                System.out.println("Optional pflanzen? (j/n)");
+                if (scanner.nextLine().equalsIgnoreCase("j")) {
+                    GameLogic.plantFirstCard(player, state);
+                }
+            }
+
             // Phase 3
             List<Card> table = TradeLogic.revealTradeCards(state);
             System.out.println("Tischkarten: " + table);
