@@ -16,6 +16,16 @@ public class BeanType {
     }
 
     public int getCoins(int amount) {
-        return rate.getOrDefault(amount, 0);
+        int best = 0;
+
+        for (Map.Entry<Integer, Integer> entry : rate.entrySet()) {
+            int beansNeeded = entry.getKey();
+
+            if (beansNeeded <= amount) {
+                best = Math.max(best, entry.getValue());
+            }
+        }
+
+        return best;
     }
 }
